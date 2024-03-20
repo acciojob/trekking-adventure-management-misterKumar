@@ -37,6 +37,17 @@ public class TrekkingAdventureManagementSystem {
     public static String calculateTrekDifficulty(Trek trek) {
 		
     	// your code goes here
-    	return null;
+        int duration = trek.getDuration();
+        int altitudeGain = trek.getAltitudeGain();
+        List<Object> knownChallenges = trek.getKnownChallenges();
+
+        // Assign difficulty levels based on thresholds
+        if (duration <= 5 && altitudeGain <= 2000 && !knownChallenges.contains("Glacial Crossings") && !knownChallenges.contains("High Altitude")) {
+            return "Easy";
+        } else if (duration <= 10 && altitudeGain <= 4000 && !knownChallenges.contains("High Altitude")) {
+            return "Moderate";
+        }
+
+        return "Challenging";
     }
 }

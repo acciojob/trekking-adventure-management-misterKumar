@@ -10,6 +10,10 @@ public class Trek {
 
 	    public Trek(String name, int duration, int altitudeGain, List<Object> knownChallenges2) {
 	    	// your code goes here
+			this.name=name;
+			this.duration=duration;
+			this.altitudeGain=altitudeGain;
+			this.knownChallenges=knownChallenges2;
 	    }
 
 	    public String getName() {
